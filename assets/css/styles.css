@@ -284,8 +284,8 @@ h2,h3{font-weight:600}
    IDENTIDAD VISUAL VALSET — LOGOTIPO OFICIAL
 ========================================================= */
 .brand img{
-  width:58px;
-  height:58px;
+  width:30px;
+  height:30px;
   object-fit:contain;
   border-radius:13px;
   background:#fff;
