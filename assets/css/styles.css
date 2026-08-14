@@ -459,3 +459,150 @@ h2,h3{font-weight:600}
     height: 78px;
   }
 }
+
+/* CV Design Portfolio */
+.cv-design-intro{margin:0 0 28px;padding:28px;border-left:4px solid #b58a4a}
+.cv-design-intro p,.cv-sample-card p{text-align:justify;text-justify:inter-word}
+.cv-design-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:34px}
+.cv-sample-card{overflow:hidden;border:1px solid rgba(20,36,58,.12);border-radius:18px;background:#fff;box-shadow:0 14px 36px rgba(20,36,58,.08)}
+.cv-sample-card img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border-bottom:1px solid rgba(20,36,58,.08);background:#f5f3ef}
+.cv-sample-card>div{padding:20px}
+.cv-sample-card small{display:block;margin-bottom:7px;color:#b58a4a;font-weight:800;letter-spacing:.09em}
+.cv-sample-card h3{margin:0 0 10px;color:#14243a}
+.cv-sample-card p{margin:0 0 14px;color:#596474;line-height:1.65}
+@media(max-width:900px){.cv-design-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.cv-design-gallery{grid-template-columns:1fr}.cv-design-intro p,.cv-sample-card p{text-align:left}}
+
+/* CV Design Portfolio v2 - accordion case studies */
+.primary-cv-callout{margin-top:22px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:#f4efe6;border:1px solid rgba(181,138,74,.45);border-radius:14px}
+.primary-cv-callout strong,.primary-cv-callout span{display:block}.primary-cv-callout strong{color:#14243a;font-size:1.05rem;margin-bottom:4px}.primary-cv-callout span{color:#596474}.primary-cv-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}
+.cv-accordion-list{display:grid;gap:14px;margin:26px 0 36px}.cv-accordion{border:1px solid rgba(20,36,58,.14);border-radius:16px;background:#fff;box-shadow:0 10px 28px rgba(20,36,58,.06);overflow:hidden}.cv-accordion summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:20px 22px}.cv-accordion summary::-webkit-details-marker{display:none}.cv-accordion summary b,.cv-accordion summary small{display:block}.cv-accordion summary b{color:#14243a;font-size:1.05rem}.cv-accordion summary small{margin-top:4px;color:#6a7380}.accordion-plus{font-size:1.6rem;color:#722f37;transition:transform .2s ease}.cv-accordion[open] .accordion-plus{transform:rotate(45deg)}
+.cv-case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:0 22px 22px;border-top:1px solid rgba(20,36,58,.08);padding-top:20px}.cv-variant-card{display:grid;grid-template-columns:42% 1fr;overflow:hidden;border:1px solid rgba(20,36,58,.12);border-radius:14px;background:#fbfaf7}.cv-variant-card img{width:100%;height:100%;min-height:245px;object-fit:cover;object-position:top;border-right:1px solid rgba(20,36,58,.08)}.cv-variant-card>div{padding:18px}.cv-variant-card h3{margin:7px 0 8px;color:#14243a}.cv-variant-card p{text-align:justify;text-justify:inter-word;color:#596474;line-height:1.55}.variant-badge{display:inline-block;padding:4px 8px;border-radius:999px;font-size:.7rem;font-weight:900;letter-spacing:.08em}.variant-badge.visual{background:#722f37;color:#fff}.variant-badge.ats{background:#14243a;color:#fff}
+@media(max-width:900px){.cv-case-grid{grid-template-columns:1fr}.primary-cv-callout{align-items:flex-start;flex-direction:column}}@media(max-width:620px){.cv-variant-card{grid-template-columns:1fr}.cv-variant-card img{height:280px;border-right:0;border-bottom:1px solid rgba(20,36,58,.08)}.cv-variant-card p{text-align:left}.primary-cv-actions{width:100%}.primary-cv-actions .btn{flex:1;text-align:center}}
+
+
+/* =========================================================
+   PROJECT PORTFOLIO — TOP-LEVEL COLLAPSIBLE CATEGORIES
+========================================================= */
+.project-section-lead{max-width:820px}
+.portfolio-category-list{display:grid;gap:18px;margin-top:26px}
+.portfolio-category{
+  overflow:hidden;
+  border:1px solid rgba(20,36,58,.15);
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 14px 36px rgba(20,36,58,.07);
+}
+.portfolio-category > summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:23px 25px;
+  background:linear-gradient(135deg,#fff,#fbfaf7);
+}
+.portfolio-category > summary::-webkit-details-marker{display:none}
+.portfolio-category > summary b,
+.portfolio-category > summary small{display:block}
+.portfolio-category > summary b{color:var(--navy);font-size:1.2rem}
+.portfolio-category > summary small{margin-top:5px;color:#697482;line-height:1.45}
+.portfolio-category[open] > summary{border-bottom:1px solid rgba(20,36,58,.08)}
+.portfolio-category[open] > summary .accordion-plus{transform:rotate(45deg)}
+.portfolio-category-body{padding:25px}
+.portfolio-category-description{
+  max-width:900px;
+  margin:0 0 24px;
+  color:#596474;
+  line-height:1.7;
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+/* Stronger distinction between real CV and fictional design samples */
+.primary-cv-callout{
+  background:linear-gradient(135deg,#14243a,#1e344f);
+  border-color:rgba(181,138,74,.7);
+  box-shadow:0 16px 34px rgba(20,36,58,.18);
+}
+.primary-cv-callout strong{color:#fff}
+.primary-cv-callout span{color:#dbe2ea}
+.primary-cv-callout .btn-secondary{border-color:#fff;color:#fff}
+.primary-cv-callout .btn-secondary:hover{background:#fff;color:#14243a}
+
+/* Realistic PDF preview treatment */
+.cv-variant-card{
+  background:#fff;
+  box-shadow:0 8px 24px rgba(20,36,58,.07);
+}
+.cv-variant-card img{
+  background:#e9edf2;
+  object-fit:contain;
+  padding:10px;
+}
+.cv-variant-card p{min-height:72px}
+
+@media(max-width:620px){
+  .portfolio-category > summary{padding:19px}
+  .portfolio-category-body{padding:18px}
+  .portfolio-category-description{text-align:left}
+  .cv-variant-card p{min-height:0}
+}
+
+/* =========================================================
+   CV DESIGN PORTFOLIO — RECRUITER PREVIEW EXPERIENCE
+========================================================= */
+.cv-case-brief{
+  margin:0 22px;
+  padding:16px 18px;
+  background:linear-gradient(135deg,rgba(20,36,58,.045),rgba(181,138,74,.07));
+  border-left:3px solid var(--gold);
+  border-radius:0 12px 12px 0;
+}
+.cv-case-brief strong{display:block;color:var(--navy);margin-bottom:4px;font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+.cv-case-brief p{margin:0;color:#596474;line-height:1.65;text-align:justify;text-justify:inter-word}
+.cv-case-grid{padding-top:16px}
+.cv-preview-trigger{border:0;padding:0;margin:0;background:transparent;font:inherit;color:inherit;cursor:zoom-in;text-align:left}
+.cv-variant-card>.cv-preview-trigger{position:relative;display:block;min-height:100%;overflow:hidden;background:#e9edf2;border-right:1px solid rgba(20,36,58,.08)}
+.cv-variant-card>.cv-preview-trigger img{display:block;width:100%;height:100%;min-height:285px;object-fit:contain;object-position:top;background:#e9edf2;padding:10px;border:0;transition:transform .28s ease,filter .28s ease}
+.cv-preview-overlay{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;justify-content:center;padding:9px 11px;border-radius:9px;background:rgba(20,36,58,.93);color:#fff;font-size:.78rem;font-weight:800;opacity:0;transform:translateY(6px);transition:.22s ease;box-shadow:0 8px 22px rgba(20,36,58,.22)}
+.cv-variant-card>.cv-preview-trigger:hover img{transform:scale(1.015);filter:brightness(.94)}
+.cv-variant-card>.cv-preview-trigger:hover .cv-preview-overlay,.cv-variant-card>.cv-preview-trigger:focus-visible .cv-preview-overlay{opacity:1;transform:none}
+.cv-card-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:12px;padding-top:10px;border-top:1px solid rgba(20,36,58,.08)}
+.cv-card-actions .text-link{margin:0;background:none;border:0;padding:0;font:inherit;font-weight:800;color:var(--wine);cursor:pointer;text-decoration:none}
+.cv-card-actions a.text-link{color:var(--navy)}
+.cv-card-actions .text-link:hover{text-decoration:underline}
+
+.cv-lightbox[hidden]{display:none!important}
+.cv-lightbox{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:24px}
+.cv-lightbox-backdrop{position:absolute;inset:0;background:rgba(8,17,29,.78);backdrop-filter:blur(7px)}
+.cv-lightbox-dialog{position:relative;z-index:1;width:min(1120px,96vw);height:min(920px,92vh);display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;background:#f4f6f8;border:1px solid rgba(255,255,255,.18);border-radius:20px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.42)}
+.cv-lightbox-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 20px;background:#fff;border-bottom:1px solid rgba(20,36,58,.1)}
+.cv-lightbox-header h2{margin:3px 0 0;font-size:1.35rem;color:var(--navy)}
+.cv-lightbox-close{width:42px;height:42px;border-radius:50%;border:1px solid rgba(20,36,58,.15);background:#fff;color:var(--navy);font-size:1.75rem;line-height:1;cursor:pointer;transition:.2s ease}
+.cv-lightbox-close:hover{background:var(--navy);color:#fff}
+.cv-lightbox-toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 20px;background:#fbfaf7;border-bottom:1px solid rgba(20,36,58,.08)}
+.cv-lightbox-switch{display:inline-flex;padding:4px;border-radius:12px;background:#e6eaf0}
+.cv-lightbox-option{border:0;border-radius:9px;background:transparent;color:#4e5d6e;font-weight:900;letter-spacing:.05em;padding:8px 14px;cursor:pointer}
+.cv-lightbox-option.is-active{background:#fff;color:var(--navy);box-shadow:0 3px 12px rgba(20,36,58,.12)}
+.cv-lightbox-stage{min-height:0;overflow:auto;padding:22px;display:flex;justify-content:center;align-items:flex-start;background:linear-gradient(135deg,#dfe4ea,#eef1f4)}
+.cv-lightbox-stage img{width:min(760px,100%);height:auto;display:block;background:#fff;box-shadow:0 18px 48px rgba(20,36,58,.22);border-radius:2px}
+.cv-lightbox-note{margin:0;padding:10px 20px;background:#fff;color:#697482;font-size:.78rem;line-height:1.45;text-align:center;border-top:1px solid rgba(20,36,58,.08)}
+body.cv-lightbox-open{overflow:hidden}
+
+@media(max-width:900px){
+  .cv-variant-card>.cv-preview-trigger{border-right:0;border-bottom:1px solid rgba(20,36,58,.08)}
+  .cv-lightbox{padding:10px}
+  .cv-lightbox-dialog{width:100%;height:96vh;border-radius:14px}
+}
+@media(max-width:620px){
+  .cv-case-brief{margin:0 16px}.cv-case-brief p{text-align:left}
+  .cv-lightbox-header{padding:13px 14px}.cv-lightbox-header h2{font-size:1.05rem}
+  .cv-lightbox-toolbar{padding:10px 12px;align-items:stretch;flex-direction:column}
+  .cv-lightbox-switch{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .cv-lightbox-option{text-align:center}
+  .cv-lightbox-pdf{text-align:center;width:100%}
+  .cv-lightbox-stage{padding:12px}
+  .cv-lightbox-note{text-align:left;padding:9px 12px}
+}
