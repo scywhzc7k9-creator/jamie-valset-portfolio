@@ -94,3 +94,57 @@
   setLanguage(currentLang);
   activateTab(location.hash.replace('#', '') || 'inicio', false);
 })();
+
+/* CV Design Portfolio lightbox */
+(() => {
+  const lightbox = document.querySelector('[data-cv-lightbox]');
+  if (!lightbox) return;
+  const image = lightbox.querySelector('[data-cv-lightbox-image]');
+  const title = lightbox.querySelector('[data-cv-lightbox-title]');
+  const pdfLink = lightbox.querySelector('.cv-lightbox-pdf');
+  const options = [...lightbox.querySelectorAll('[data-cv-version]')];
+  const closeButtons = [...lightbox.querySelectorAll('[data-cv-close]')];
+  let activeCase = null;
+  let activeKind = 'visual';
+  let lastFocus = null;
+
+  function renderVersion(kind) {
+    if (!activeCase) return;
+    activeKind = kind === 'ats' ? 'ats' : 'visual';
+    const prefix = activeKind === 'ats' ? 'ats' : 'visual';
+    image.src = activeCase.dataset[`${prefix}Image`];
+    image.alt = `${activeCase.dataset.caseName} ${activeKind.toUpperCase()} CV preview`;
+    pdfLink.href = activeCase.dataset[`${prefix}Pdf`];
+    options.forEach(btn => btn.classList.toggle('is-active', btn.dataset.cvVersion === activeKind));
+  }
+
+  function openPreview(trigger) {
+    activeCase = trigger.closest('.cv-accordion');
+    if (!activeCase) return;
+    lastFocus = trigger;
+    title.textContent = activeCase.dataset.caseName;
+    renderVersion(trigger.dataset.kind || 'visual');
+    lightbox.hidden = false;
+    lightbox.setAttribute('aria-hidden','false');
+    document.body.classList.add('cv-lightbox-open');
+    requestAnimationFrame(() => lightbox.querySelector('.cv-lightbox-close')?.focus());
+  }
+
+  function closePreview() {
+    lightbox.hidden = true;
+    lightbox.setAttribute('aria-hidden','true');
+    document.body.classList.remove('cv-lightbox-open');
+    image.src = '';
+    lastFocus?.focus();
+  }
+
+  document.querySelectorAll('.cv-preview-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => openPreview(trigger));
+  });
+  options.forEach(option => option.addEventListener('click', () => renderVersion(option.dataset.cvVersion)));
+  closeButtons.forEach(btn => btn.addEventListener('click', closePreview));
+  document.addEventListener('keydown', e => {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape') closePreview();
+  });
+})();
