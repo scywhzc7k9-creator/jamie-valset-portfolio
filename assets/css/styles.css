@@ -606,3 +606,27 @@ body.cv-lightbox-open{overflow:hidden}
   .cv-lightbox-stage{padding:12px}
   .cv-lightbox-note{text-align:left;padding:9px 12px}
 }
+
+
+/* =========================================================
+   ACADEMIC PDF PORTFOLIO — TWO-COLUMN CERTIFICATE SYSTEM
+========================================================= */
+.academic-portfolio-intro{
+  margin-bottom:24px;padding:22px;border:1px solid rgba(20,36,58,.12);border-radius:16px;
+  background:linear-gradient(135deg,#fbfaf7,#f5f8fc)
+}
+.academic-portfolio-intro h3{margin:8px 0 10px;color:var(--navy);font-size:1.6rem}
+.academic-portfolio-intro p{margin:0;color:#596474;line-height:1.7;text-align:justify;text-justify:inter-word}
+.academic-privacy-note{margin-top:14px!important;padding:13px 15px;border-left:3px solid var(--gold);background:#fff;border-radius:0 10px 10px 0;font-size:.9rem}
+.academic-project-card{min-height:320px}
+.academic-project-preview{background:#e9edf2;padding:12px;display:flex;align-items:center;justify-content:center}
+.academic-project-preview img{width:100%;height:100%;max-height:385px;object-fit:contain!important;object-position:center;background:#fff;box-shadow:0 7px 18px rgba(20,36,58,.12);padding:0!important}
+.academic-project-content h3{font-size:1.34rem;line-height:1.22}
+.academic-project-content p{font-size:.91rem;line-height:1.55;text-align:justify;text-justify:inter-word}
+.academic-project-tags{margin:2px 0 14px!important}
+.academic-project-content small{margin-top:auto}
+@media(max-width:760px){
+  .academic-project-preview{height:330px}
+  .academic-project-preview img{height:100%;max-height:none}
+  .academic-portfolio-intro p,.academic-project-content p{text-align:left}
+}
