@@ -148,3 +148,18 @@
     if (e.key === 'Escape') closePreview();
   });
 })();
+
+
+/* Project portfolio: let visitors choose what to open first. */
+(() => {
+  const categories = [...document.querySelectorAll('.portfolio-category-list > .portfolio-category')];
+  categories.forEach(category => {
+    category.removeAttribute('open');
+    category.addEventListener('toggle', () => {
+      if (!category.open) return;
+      categories.forEach(other => {
+        if (other !== category) other.open = false;
+      });
+    });
+  });
+})();
