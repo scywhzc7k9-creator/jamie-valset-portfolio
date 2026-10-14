@@ -25,6 +25,20 @@ h2,h3{font-weight:600}
 .eyebrow{color:var(--wine)}
 .card,.timeline-card,.project-card{border-color:rgba(181,138,74,.25)}
 
+.timeline-status{
+  display:inline-block;
+  max-width:100%;
+  padding:6px 9px;
+  border:1px solid var(--gold);
+  border-radius:999px;
+  background:var(--cream);
+  color:var(--wine);
+  font-size:.72rem;
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:.01em;
+}
+
 .language-showcase{background:#fff;border-top:1px solid rgba(181,138,74,.25);border-bottom:1px solid rgba(181,138,74,.25);padding:34px 0}
 .language-showcase .container{display:grid;grid-template-columns:minmax(280px,.8fr) 1.5fr;gap:34px;align-items:center}
 .language-showcase-heading h2{font-size:clamp(1.7rem,3vw,2.55rem);color:var(--navy);margin:0}
